@@ -1,0 +1,34 @@
+.p0850 .shell{display:block}
+.p0850 .rail{display:flex;align-items:center;gap:18px;border:0;border-bottom:1px dashed var(--line);padding:10px 20px}
+.p0850 .rail-label,.p0850 .rail-note{display:none}.p0850 #stage-nav{flex-direction:row;flex-wrap:wrap}
+.p0850 .toolbar{background:var(--accent);color:#fff;border:0;margin:16px 16px 0;border-radius:var(--radius);position:relative}
+.p0850 .toolbar .actor,.p0850 .toolbar .rule-chip{color:#e0ebff}.p0850 .toolbar button,.p0850 .toolbar select{color:var(--ink)}
+.p0850 .toolbar::after{content:"";position:absolute;left:12px;right:12px;bottom:8px;border-bottom:1px dashed var(--line)}
+.p0850 main{padding:16px}
+.p0850 .board{grid-template-columns:minmax(0,2fr) minmax(245px,1fr);position:relative;grid-template-areas:"table chart" "issues chart" "ledger review"}
+.p0850 #panel-table{grid-area:table}.p0850 #panel-chart{grid-area:chart}.p0850 #panel-issues{grid-area:issues}.p0850 #panel-ledger{grid-area:ledger}.p0850 #panel-review{grid-area:review}
+.p0850 .panel{border:1px dashed var(--line);border-radius:var(--radius);padding:18px}
+.p0850 .metric{border:1px dashed var(--line);border-radius:var(--radius);background:transparent}
+.p0850 .metric strong{font-size:clamp(24px,3.2vw,45px)}
+
+@media (max-width: 980px) {
+  .p0850 .board { grid-template-columns: minmax(0,1fr) !important; grid-template-areas: none !important; }
+  .p0850 .board > * { grid-column: auto !important; grid-row: auto !important; grid-area: auto !important; }
+  .p0850 .kpis { grid-template-columns: repeat(2,minmax(0,1fr)) !important; }
+}
+@media (max-width: 680px) {
+  .p0850 .shell { display: block !important; }
+  .p0850 .rail { height: auto !important; min-height: 0 !important; position: static !important; padding: 10px 12px !important; }
+  .p0850 .rail::after { display: none !important; }
+  .p0850 .rail-label, .p0850 .rail-note { display: none !important; }
+  .p0850 #stage-nav { flex-direction: row !important; flex-wrap: nowrap !important; overflow-x: auto !important; }
+  .p0850 #stage-nav button { width: auto !important; border-left: 0 !important; border-bottom: 2px solid transparent !important; white-space: nowrap; }
+  .p0850 #stage-nav button[aria-pressed="true"] { border-bottom-color: var(--accent) !important; }
+  .p0850 .toolbar { padding: 16px 14px !important; }
+  .p0850 .toolbar h1 { font-size: clamp(22px,8vw,38px); }
+  .p0850 main { padding: 8px !important; }
+  .p0850 .kpis { grid-template-columns: repeat(2,minmax(0,1fr)) !important; }
+  .p0850 .metric:nth-child(2) { transform: none !important; }
+  .p0850 .panel, .p0850 .metric { min-width: 0 !important; }
+  .p0850 .table-wrap { max-width: 100%; overflow-x: auto; }
+}

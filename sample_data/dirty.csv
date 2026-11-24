@@ -1,0 +1,8 @@
+﻿ticket_id,passenger_id,action,original_fare_cents,taxes_cents,change_fee_cents,refundable,new_fare_cents,invoice_cents
+T1,P1,REFUND,10000,2000,0,Y,0,12000
+T7,P7,VOID,1000,100,0,Y,0,0
+T8,P8,REFUND,1000,100,0,X,0,0
+T9,P9,REISSUE,1000,100,-1,Y,1200,0
+T10,P10,REFUND,-100,100,0,Y,0,0
+
+T1,P1,REFUND,10000,2000,0,Y,0,-12000,surplus

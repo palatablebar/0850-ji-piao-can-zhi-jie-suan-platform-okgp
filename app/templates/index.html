@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% import "widgets.html" as ui %}
+{% block content %}
+<main>
+  <section class="kpis" aria-label="关键指标">
+    {{ ui.metric("m-input", "来源行") }}
+    {{ ui.metric("m-accepted", "采信行") }}
+    {{ ui.metric("m-isolated", "隔离行") }}
+    {{ ui.metric("m-rejected", "阻断项") }}
+  </section>
+  <section class="board">
+    <article class="panel" id="panel-table">
+      <div class="panel-head"><h2>批次结果</h2><span class="hint" id="row-count">--</span></div>
+      <div class="table-wrap">
+        <table><thead id="row-head"></thead><tbody id="row-body"></tbody></table>
+      </div>
+    </article>
+    <article class="panel" id="panel-chart">
+      <div class="panel-head"><h2>指标分布</h2><span class="hint" id="chart-label"></span></div>
+      <div id="chart" class="chart"></div>
+    </article>
+    <article class="panel" id="panel-issues">
+      <div class="panel-head"><h2>异常与隔离</h2><span class="hint" id="issue-count">--</span></div>
+      <ul class="issues" id="issue-list"></ul>
+    </article>
+    <article class="panel" id="panel-ledger">
+      <div class="panel-head"><h2>运行对账</h2></div>
+      <div class="ledger" id="ledger-list"></div>
+    </article>
+    <article class="panel" id="panel-review">
+      <div class="panel-head"><h2>批次复核</h2><span class="hint" id="revision">rev 0</span></div>
+      <div class="review">
+        <label for="comment">复核意见</label>
+        <textarea id="comment" placeholder="核验来源、边界与批次结论"></textarea>
+        <div class="review-actions">
+          <button id="sign" type="button" disabled>签发</button>
+          <button id="hold" type="button" disabled>暂缓</button>
+          <a id="download" href="#" download hidden>下载复核证据</a>
+        </div>
+      </div>
+    </article>
+  </section>
+</main>
+{% endblock %}

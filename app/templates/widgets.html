@@ -1,0 +1,6 @@
+{% macro metric(id, label) %}
+<article class="metric"><span>{{ label }}</span><strong id="{{ id }}">--</strong></article>
+{% endmacro %}
+{% macro check(id, label) %}
+<div class="ledger-row"><span>{{ label }}</span><strong id="{{ id }}">--</strong></div>
+{% endmacro %}

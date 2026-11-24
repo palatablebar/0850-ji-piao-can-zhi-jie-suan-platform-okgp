@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>机票残值结算台</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='theme.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='layout.css') }}">
+</head>
+<body class="p0850 layout-ticket">
+<div class="shell">
+  <nav class="rail" aria-label="阶段导航">
+    <a class="brand" href="/" aria-label="工作台首页">票结</a>
+    <p class="rail-label">处理阶段</p>
+    <div id="stage-nav"></div>
+    <p class="rail-note">v1.0 · 本地批次</p>
+  </nav>
+  <div class="work">
+    <header class="toolbar">
+      <div>
+        <p class="actor">航旅结算专员</p>
+        <h1>机票残值结算台</h1>
+      </div>
+      <div class="tools">
+        <span class="rule-chip">残值抵扣与税费分离</span>
+        <label>样例 <select id="profile"><option value="dirty">dirty</option><option value="clean">clean</option></select></label>
+        <button id="run" type="button">执行批次</button>
+      </div>
+    </header>
+    {% block content %}{% endblock %}
+    <footer class="statusbar">
+      <span id="notice" class="notice"></span>
+      <span id="run-status">未执行批次</span>
+      <span>0850 · 票结</span>
+    </footer>
+  </div>
+</div>
+<script src="{{ url_for('static', filename='charts.js') }}"></script>
+<script src="{{ url_for('static', filename='workbench.js') }}"></script>
+</body>
+</html>
