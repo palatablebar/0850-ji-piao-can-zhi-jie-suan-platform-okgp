@@ -5,8 +5,15 @@
 .p0850 .toolbar .actor,.p0850 .toolbar .rule-chip{color:#e0ebff}.p0850 .toolbar button,.p0850 .toolbar select{color:var(--ink)}
 .p0850 .toolbar::after{content:"";position:absolute;left:12px;right:12px;bottom:8px;border-bottom:1px dashed var(--line)}
 .p0850 main{padding:16px}
-.p0850 .board{grid-template-columns:minmax(0,2fr) minmax(245px,1fr);position:relative;grid-template-areas:"table chart" "issues chart" "ledger review"}
-.p0850 #panel-table{grid-area:table}.p0850 #panel-chart{grid-area:chart}.p0850 #panel-issues{grid-area:issues}.p0850 #panel-ledger{grid-area:ledger}.p0850 #panel-review{grid-area:review}
+.p0850 .board{grid-template-columns:minmax(0,2fr) minmax(245px,1fr);position:relative;grid-template-areas:"table chart" "issues chart" "ledger review" "accounting accounting"}
+.p0850 #panel-table{grid-area:table}.p0850 #panel-chart{grid-area:chart}.p0850 #panel-issues{grid-area:issues}.p0850 #panel-ledger{grid-area:ledger}.p0850 #panel-review{grid-area:review}.p0850 #panel-accounting{grid-area:accounting}
+.p0850 .accounting{display:grid;gap:10px}
+.p0850 .acct-form{display:flex;flex-wrap:wrap;align-items:flex-end;gap:10px}
+.p0850 .acct-form label{display:grid;gap:4px;font-size:12px;color:var(--muted)}
+.p0850 .acct-form input{min-width:11em}
+.p0850 .acct-badge{font-size:11px;font-weight:700;letter-spacing:.05em;padding:.15em .55em;border:1px solid var(--line);border-radius:var(--radius)}
+.p0850 .acct-badge[data-s="open"]{color:var(--accent)}
+.p0850 .acct-badge[data-s="closed"]{color:var(--danger)}
 .p0850 .panel{border:1px dashed var(--line);border-radius:var(--radius);padding:18px}
 .p0850 .metric{border:1px dashed var(--line);border-radius:var(--radius);background:transparent}
 .p0850 .metric strong{font-size:clamp(24px,3.2vw,45px)}

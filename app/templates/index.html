@@ -39,6 +39,34 @@
         </div>
       </div>
     </article>
+    <article class="panel" id="panel-accounting">
+      <div class="panel-head"><h2>月度封账与航司更正</h2><span class="hint" id="acct-current">未开账</span></div>
+      <div class="accounting">
+        <div class="acct-form">
+          <label>账期 <input id="acct-period" type="month" aria-label="选择账期"></label>
+          <div class="review-actions">
+            <button id="acct-load" type="button">查看结算账</button>
+            <button id="acct-close" type="button">封账</button>
+            <a id="acct-download" href="#" download hidden>下载结算账 CSV</a>
+          </div>
+        </div>
+        <div class="acct-form">
+          <label>票号 <input id="acct-ticket" placeholder="如 T3"></label>
+          <label>更正后改期费(分) <input id="acct-fee" type="number" min="0" step="1" placeholder="如 1200"></label>
+          <label>请求号 <input id="acct-request" placeholder="重试保持同一请求号"></label>
+          <div class="review-actions">
+            <button id="acct-correct" type="button" disabled>登记更正</button>
+          </div>
+        </div>
+        <div class="ledger" id="acct-summary"><p class="empty">选择账期后展示结算账</p></div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>类型</th><th>票号</th><th>更正号</th><th class="num">金额(分)</th><th>操作</th></tr></thead>
+            <tbody id="acct-entries"><tr><td class="empty" colspan="5">暂无分录</td></tr></tbody>
+          </table>
+        </div>
+      </div>
+    </article>
   </section>
 </main>
 {% endblock %}

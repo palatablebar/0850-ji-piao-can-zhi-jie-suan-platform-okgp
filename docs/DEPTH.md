@@ -15,6 +15,10 @@
 | M5 运行对账 | 核对来源行、采信、隔离、重复与计算条目 | `POST /api/stages/reconcile` | `app/reconcile/ledger.py` | `tests/test_reconcile.py` |
 | M6 批次复核 | 带版本号签发或暂缓，拒绝陈旧复核 | `POST /api/runs/{id}/review` | `app/review/service.py` | `tests/test_review.py` |
 | M7 证据交付 | 仅在签发后输出可校验的复核证据 | `GET /api/runs/{id}/evidence` | `app/evidence/render.py` | `tests/test_evidence.py` |
+| M8 月度封账 | 按月冻结账期并写快照，失败重试不串月 | `POST /api/accounting/periods/{period}/close` | `app/accounting/service.py` | `tests/test_accounting.py` |
+| M9 航司更正 | 已签发批次改期费更正差额进当前未封账月，重试幂等 | `POST /api/accounting/corrections` | `app/accounting/service.py` | `tests/test_accounting.py` |
+| M10 更正撤销 | 未封账同月抵消，已封账影响进当期 | `POST /api/accounting/corrections/{id}/reverse` | `app/accounting/service.py` | `tests/test_accounting.py` |
+| M11 结算账下载 | 下载指定账期 JSON/CSV，封账后以快照为准 | `GET /api/accounting/periods/{period}/ledger` | `app/accounting/render.py` | `tests/test_accounting_http.py` |
 
 ## 输入陷阱
 
